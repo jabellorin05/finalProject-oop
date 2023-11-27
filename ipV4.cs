@@ -7,16 +7,28 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class ipV4 : ipValid
+    internal class ipV4 : IpValid
     {
-        public override string ipValidator(string ip)
+        public override bool ipValidatorIpV4(string ip)
         {
 
+            string pattern = "^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$";
+            Regex regex = new Regex(pattern);
 
-            Regex regex = new Regex();
+            if (regex.IsMatch(ip))
+            {
 
+                DisplayMessageIpV4(true);
+                return true;
 
-            return ip;
+            }
+            else
+            {
+                DisplayMessageIpV4(false);
+                return false;
+            }
+
+           
         }
     }
 }
