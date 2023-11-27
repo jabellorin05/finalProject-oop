@@ -19,7 +19,29 @@ namespace FinalProject
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string ipV4 = textBox1.Text;
 
+            if (ipV4 == "")
+            {
+                MessageBox.Show("sorry, the field cannot be empty");
+            }
+            else
+            {
+                try
+                {
+                    ipV4 ip4 = new ipV4();
+
+                    ip4.ipValidatorIpV4(ipV4);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+               
+
+           
         }
     }
 }

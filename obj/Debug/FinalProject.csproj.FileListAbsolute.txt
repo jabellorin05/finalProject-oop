@@ -25,3 +25,4 @@ C:\Users\jose\Desktop\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\jose\Desktop\FinalProject\obj\Debug\FinalProject.Exchange.resources
 C:\Users\jose\Desktop\FinalProject\obj\Debug\FinalProject.The_Temperature_application.resources
 C:\Users\jose\Desktop\FinalProject\obj\Debug\FinalProject.The_IP4___IP6_Validator.resources
+C:\Users\jose\Desktop\FinalProject\obj\Debug\FinalProject.simpleCalculatorAplication.resources

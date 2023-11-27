@@ -30,5 +30,10 @@ namespace FinalProject
 
            
         }
+
+        public override bool ipValidatorIpV6(string ip)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
