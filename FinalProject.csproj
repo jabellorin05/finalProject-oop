@@ -63,6 +63,7 @@
       <DependentUpon>Exchange.cs</DependentUpon>
     </Compile>
     <Compile Include="FtoC.cs" />
+    <Compile Include="ipV4.cs" />
     <Compile Include="ipValid.cs" />
     <Compile Include="Lotto69.cs">
       <SubType>Form</SubType>
@@ -85,11 +86,11 @@
       <DependentUpon>simpleCalculatorAplication.cs</DependentUpon>
     </Compile>
     <Compile Include="Temperature.cs" />
-    <Compile Include="TheIP4&amp;IP6Validator.cs">
+    <Compile Include="IP-Validator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TheIP4&amp;IP6Validator.Designer.cs">
-      <DependentUpon>TheIP4&amp;IP6Validator.cs</DependentUpon>
+    <Compile Include="IP-Validator.Designer.cs">
+      <DependentUpon>IP-Validator.cs</DependentUpon>
     </Compile>
     <Compile Include="The Temperature application.cs">
       <SubType>Form</SubType>
@@ -122,8 +123,8 @@
     <EmbeddedResource Include="simpleCalculatorAplication.resx">
       <DependentUpon>simpleCalculatorAplication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TheIP4&amp;IP6Validator.resx">
-      <DependentUpon>TheIP4&amp;IP6Validator.cs</DependentUpon>
+    <EmbeddedResource Include="IP-Validator.resx">
+      <DependentUpon>IP-Validator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="The Temperature application.resx">
       <DependentUpon>The Temperature application.cs</DependentUpon>
