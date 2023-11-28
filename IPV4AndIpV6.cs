@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class ipV4 : IpValid
+    internal class IPV4AndIpV6 : IpValid
     {
         public override bool ipValidatorIpV4(string ip)
         {
@@ -18,13 +18,13 @@ namespace FinalProject
             if (regex.IsMatch(ip))
             {
 
-                DisplayMessageIpV4(true);
+                DisplayMessageIpV4(true,ip);
                 return true;
 
             }
             else
             {
-                DisplayMessageIpV4(false);
+                DisplayMessageIpV4(false,ip);
                 return false;
             }
 
@@ -33,7 +33,22 @@ namespace FinalProject
 
         public override bool ipValidatorIpV6(string ip)
         {
-            throw new NotImplementedException();
+            string pattern = @"^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|([0-9a-fA-F]{1,4}:){1,7}:|::([0-9a-fA-F]{1,4}:){1,7}|([0-9a-fA-F]{1,4}:){1,7}::)$";
+
+            Regex regex = new Regex(pattern);
+
+            if (regex.IsMatch(ip))
+            {
+
+                DisplayMessageIpV6(true);
+                return true;
+
+            }
+            else
+            {
+                DisplayMessageIpV6(false);
+                return false;
+            }
         }
     }
 }

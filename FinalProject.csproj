@@ -63,7 +63,7 @@
       <DependentUpon>Exchange.cs</DependentUpon>
     </Compile>
     <Compile Include="FtoC.cs" />
-    <Compile Include="ipV4.cs" />
+    <Compile Include="IPV4AndIpV6.cs" />
     <Compile Include="ipValid.cs" />
     <Compile Include="Lotto69.cs">
       <SubType>Form</SubType>
