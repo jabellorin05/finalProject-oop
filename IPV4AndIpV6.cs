@@ -40,13 +40,13 @@ namespace FinalProject
             if (regex.IsMatch(ip))
             {
 
-                DisplayMessageIpV6(true);
+                DisplayMessageIpV6(true,ip);
                 return true;
 
             }
             else
             {
-                DisplayMessageIpV6(false);
+                DisplayMessageIpV6(false,ip);
                 return false;
             }
         }

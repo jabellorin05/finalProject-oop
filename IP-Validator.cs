@@ -16,6 +16,7 @@ namespace FinalProject
     {
         static string dir = @".\Files\";
         static string path = dir + "ipB.txt";
+        FileStream fs = null;
         public The_IP4___IP6_Validator()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace FinalProject
             string ipV4 = textBox1.Text;
             string ipV6 = textBox2.Text;
             bool error = false;
-            FileStream fs = null;
+           
             DateTime currentDate = DateTime.Now;
             string currentTime = DateTime.Now.ToShortTimeString();
 
@@ -97,11 +98,17 @@ namespace FinalProject
 
 
                 }
-                catch (Exception ex2)
+                catch (FileNotFoundException)
                 {
-
-                    MessageBox.Show(ex2.Message);
+                    MessageBox.Show(path + " not found.", "File Not Found");
                 }
+                catch (DirectoryNotFoundException)
+                {
+                    MessageBox.Show(path + " not found.", "Directory Not Found");
+                }
+                catch (IOException ex)
+                { MessageBox.Show(ex.Message, "IOException"); }
+                finally { if (fs != null) fs.Close(); }
             }
 
         }
@@ -123,6 +130,43 @@ namespace FinalProject
         private void The_IP4___IP6_Validator_Load(object sender, EventArgs e)
         {
             label5.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+        }
+
+        void readFile()
+        {
+            try
+            {
+                fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                string row = "";
+                BinaryReader br = new BinaryReader(fs);
+
+                while (br.PeekChar() != -1)
+                {
+
+                    row += br.ReadString() + "\n";
+                }
+
+                MessageBox.Show(row);
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show(path + " not found.", "File Not Found");
+            }
+            catch (DirectoryNotFoundException)
+            {
+                MessageBox.Show(path + " not found.", "Directory Not Found");
+            }
+            catch (IOException ex)
+            { MessageBox.Show(ex.Message, "IOException"); }
+            finally { if (fs != null) fs.Close(); }
+
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            readFile();
         }
     }
 }
