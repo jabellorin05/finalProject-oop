@@ -28,11 +28,17 @@ namespace FinalProject
 
         private void button2_Click(object sender, EventArgs e)
         {
+           saveData();
+
+        }
+
+        private void saveData()
+        {
             string ipV4 = textBox1.Text;
             string ipV6 = textBox2.Text;
             bool error = false;
-           
-            DateTime currentDate = DateTime.Now;
+
+            string currentDate = DateTime.Now.ToShortDateString();
             string currentTime = DateTime.Now.ToShortTimeString();
 
 
@@ -46,23 +52,23 @@ namespace FinalProject
                 try
                 {
 
-                    if (ipV4!="")
+                    if (ipV4 != "")
                     {
                         IPV4AndIpV6 ip4 = new IPV4AndIpV6();
 
-                      if(ip4.ipValidatorIpV4(ipV4))
+                        if (ip4.ipValidatorIpV4(ipV4))
                         {
-                           fs = new FileStream(path, FileMode.Append,FileAccess.Write);
+                            fs = new FileStream(path, FileMode.Append, FileAccess.Write);
 
-                            BinaryWriter bw = new BinaryWriter(fs) ;
+                            BinaryWriter bw = new BinaryWriter(fs);
 
-                            bw.Write(currentDate.ToString() +" "+ipV4) ;
+                            bw.Write(currentDate.ToString() + "\t" + currentTime.ToString() + "\t\t" + ipV4);
 
                             fs.Close();
                             bw.Close();
                         }
                     }
-                   
+
                 }
                 catch (Exception ex)
                 {
@@ -73,13 +79,13 @@ namespace FinalProject
 
                 try
                 {
-                    if (ipV6!="")
+                    if (ipV6 != "")
                     {
                         IPV4AndIpV6 ip6 = new IPV4AndIpV6();
 
                         if (ipV6 != "")
                         {
-                          
+
 
                             if (ip6.ipValidatorIpV6(ipV6))
                             {
@@ -94,7 +100,7 @@ namespace FinalProject
                             }
                         }
                     }
-                   
+
 
 
                 }
@@ -110,7 +116,6 @@ namespace FinalProject
                 { MessageBox.Show(ex.Message, "IOException"); }
                 finally { if (fs != null) fs.Close(); }
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -134,6 +139,8 @@ namespace FinalProject
 
         void readFile()
         {
+
+            string title = "Date\t\t time:\t\t Ip:\n";
             try
             {
                 fs = new FileStream(path, FileMode.Open, FileAccess.Read);
@@ -146,7 +153,7 @@ namespace FinalProject
                     row += br.ReadString() + "\n";
                 }
 
-                MessageBox.Show(row);
+                MessageBox.Show(title+row);
             }
             catch (FileNotFoundException)
             {
