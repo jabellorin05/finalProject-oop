@@ -9,17 +9,10 @@ namespace FinalProject
     internal class Addition : Operations
     {
         List<double> list = new List<double>();
-        public override double Calculate(List<double> list)
+        public override double Calculate(double num1,double num2)
         {
-            double result = 0;
-            foreach (var value in list)
-            {
-
-                result += value;
-
-
-            }
-            return result;
+           
+            return num1+num2;
         }
 
         public override List<double> ListValues(double values)

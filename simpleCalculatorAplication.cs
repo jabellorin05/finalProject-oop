@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProject
 {
     public partial class simpleCalculatorAplication : Form
     {
-        double result=0,currentValue=0;
-        string currentNumber = "0";
+        double result=0,currentValue=0,valueBefore=0;
+        string currentNumber = "";
         string currentOperation = "";
+        int count = 0;
         Addition addition = new Addition();
         Subtraction subtraction = new Subtraction();
 
@@ -28,46 +30,76 @@ namespace FinalProject
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text += "1";
+            textBox2.Text += "1";
             currentNumber += "1";
 
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            
-            textBox1.Text += "+";
-            double val1 = Convert.ToDouble( currentNumber);
-            
-            addition.ListValues(val1);
-            ValuesList=addition.GetList();
+           
+            Operations operations = new Addition();
+            currentValue= Convert.ToDouble(textBox2.Text);
+
+            if (count<1)
+            {
+                textBox1.Text += "+";
+            }
+          
+           
+            count++;
+            currentOperation = "+";
+           
+            if (count==1)
+            {
+                textBox2.Text = "";
+                valueBefore = currentValue;
+            }
+            if (count>1)
+            {
+                textBox1.Text += "=";
+                currentValue = Convert.ToDouble(textBox2.Text);
+                result = operations.Calculate(valueBefore,currentValue);
+                textBox2.Text = result.ToString();
+                textBox1.Text += result;
+            }
+
+         
+
+           
+           
            
            
           
 
             
-            currentNumber = "0";
+            
             currentOperation = "+";
            
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "=";
+            //textBox1.Text += "=";
 
            
             if (currentOperation.Equals("+"))
             {
+              //  double valueBefore = currentValue;
                 Operations operations = new Addition();
-                addition.ListValues(Double.Parse(currentNumber));
-                ValuesList = addition.GetList();
-                currentNumber = "0";
-                // double LastValue = Convert.ToDouble(currentValue);
-               
+                //currentValue = Convert.ToDouble(textBox2.Text);
 
-               
-                result = operations.Calculate(ValuesList);
-                textBox2.Text = result.ToString();
-                currentValue = result;
+                if (count >= 1)
+                {
+                    textBox1.Text += "=";
+                    result = operations.Calculate(valueBefore, currentValue);
+                    textBox2.Text = result.ToString();
+                    textBox1.Text += result.ToString();
+                  // currentValue = Convert.ToDouble(textBox2.Text);
+                   // count = 0;
+                }
+
+
             }
             else if (currentOperation.Equals("-"))
             {
@@ -77,7 +109,7 @@ namespace FinalProject
                 ValuesList =subtraction.GetList();
                 currentNumber = "0";
 
-                result = operations.Calculate(ValuesList);
+             //   result = operations.Calculate(ValuesList);
                 textBox2.Text = result.ToString();
                 currentValue = result;
                 
@@ -92,6 +124,7 @@ namespace FinalProject
         private void button2_Click(object sender, EventArgs e)
         {
             textBox1.Text += "2";
+            textBox2.Text += "2";
             currentNumber += "2";
 
         }
@@ -99,6 +132,7 @@ namespace FinalProject
         private void button3_Click(object sender, EventArgs e)
         {
             textBox1.Text += "3";
+            textBox2.Text += "3";
             currentNumber += 3;
         }
 

@@ -9,20 +9,7 @@ namespace FinalProject
     internal class Subtraction : Operations
     {
         List<double> list = new List<double>();
-        public override double Calculate(List<double> list)
-        {
-            double result = list[0];
-            for (int i = 1; i < list.Count; i++)
-            {
-                result -= list[i];
-
-            }
-          
-
-
-            
-            return result;
-        }
+    
 
         public override List<double> ListValues(double values)
         {
@@ -41,6 +28,11 @@ namespace FinalProject
 
 
 
+        }
+
+        public override double Calculate(double num1, double num2)
+        {
+            throw new NotImplementedException();
         }
     }
 }

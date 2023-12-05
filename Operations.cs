@@ -10,7 +10,7 @@ namespace FinalProject
     {
         public abstract List<double> ListValues(double values);
 
-        public abstract double Calculate(List<double> list);
+        public abstract double Calculate(double num1,double num2);
        
 
     }
