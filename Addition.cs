@@ -15,25 +15,9 @@ namespace FinalProject
             return num1+num2;
         }
 
-        public override List<double> ListValues(double values)
-        {
-           
-
-            list.Add(values);
-
-
-            return list;
-        }
-
+       
       
 
-        public List<double>GetList()
-        {
-
-            return list;
-
-
-
-        }
+       
     }
 }

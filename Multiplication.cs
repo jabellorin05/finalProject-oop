@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class Subtraction : Operations
+    internal class Multiplication : Operations
     {
-
-    
-
         public override double Calculate(double num1, double num2)
         {
-            return num1 - num2;
+            return num1 * num2;
         }
     }
 }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    abstract class Operations
+    internal interface IOtherOperations
     {
-      
 
-        public abstract double Calculate(double num1,double num2);
-       
+        double DivisionI(double num1, double num2);    
+
+
 
     }
 }
