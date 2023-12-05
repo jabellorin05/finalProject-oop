@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Calculations>
+ <calc>
+  <Operation>5*4=20</Operation>
+ </calc>
+ <calc>
+  <Operation>2+2=4</Operation>
+ </calc>
+ <calc>
+  <Operation>3+3=6</Operation>
+ </calc>
+ <calc>
+  <Operation>2+2=4</Operation>
+ </calc>
+</Calculations>
