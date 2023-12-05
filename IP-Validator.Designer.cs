@@ -51,6 +51,7 @@
             this.button4.TabIndex = 17;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -94,7 +95,7 @@
             this.textBox2.Location = new System.Drawing.Point(223, 187);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(391, 26);
+            this.textBox2.Size = new System.Drawing.Size(391, 30);
             this.textBox2.TabIndex = 13;
             // 
             // label3
@@ -104,7 +105,7 @@
             this.label3.Location = new System.Drawing.Point(28, 190);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 20);
+            this.label3.Size = new System.Drawing.Size(191, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "Enter IP v6 Address:";
             // 
@@ -114,7 +115,7 @@
             this.textBox1.Location = new System.Drawing.Point(223, 124);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(391, 26);
+            this.textBox1.Size = new System.Drawing.Size(391, 30);
             this.textBox1.TabIndex = 11;
             // 
             // label2
@@ -124,7 +125,7 @@
             this.label2.Location = new System.Drawing.Point(28, 127);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 20);
+            this.label2.Size = new System.Drawing.Size(191, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Enter IP v4 Address:";
             // 
@@ -135,7 +136,7 @@
             this.label1.Location = new System.Drawing.Point(53, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.Size = new System.Drawing.Size(79, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Today: ";
             // 
@@ -144,7 +145,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(120, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.Size = new System.Drawing.Size(0, 25);
             this.label4.TabIndex = 18;
             // 
             // label5
@@ -152,13 +153,13 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(150, 45);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(64, 25);
             this.label5.TabIndex = 19;
             this.label5.Text = "label5";
             // 
             // The_IP4___IP6_Validator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 499);
             this.Controls.Add(this.label5);
