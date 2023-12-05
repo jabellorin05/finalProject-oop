@@ -106,15 +106,17 @@ namespace FinalProject
             else if (currentOperation.Equals("-"))
             {
                 Operations operations = new Subtraction();
-                subtraction.ListValues(Double.Parse(currentNumber));
-               
-                ValuesList =subtraction.GetList();
-                currentNumber = "0";
+                if (count >= 1)
+                {
 
-             //   result = operations.Calculate(ValuesList);
-                textBox2.Text = result.ToString();
-                currentValue = result;
-                
+                    textBox1.Text += "=";
+                    currentValue = Convert.ToDouble(textBox2.Text);
+                    result = operations.Calculate(valueBefore, currentValue);
+                    textBox2.Text = result.ToString();
+                    textBox1.Text += result;
+                    count = 0;
+                }
+
             }
           
 
@@ -146,13 +148,36 @@ namespace FinalProject
 
         private void button13_Click(object sender, EventArgs e)
         {
-            Operations op = new Subtraction();
-            textBox1.Text += "-";
-            double val1 = Convert.ToDouble(currentNumber);
-           
-            subtraction.ListValues(val1);
-            currentNumber = "0";
+
+            Operations operations = new Subtraction();
+            currentValue = Convert.ToDouble(textBox2.Text);
+
+            if (count < 1)
+            {
+                textBox1.Text += "-";
+            }
+
+
+            count++;
             currentOperation = "-";
+
+            if (count == 1)
+            {
+                textBox2.Text = "";
+                valueBefore = currentValue;
+            }
+            if (count == 2)
+            {
+                textBox1.Text += "=";
+                currentValue = Convert.ToDouble(textBox2.Text);
+                result = operations.Calculate(valueBefore, currentValue);
+                textBox2.Text = result.ToString();
+                textBox1.Text += result;
+                count = 0;
+            }
+
+
+
         }
     }
 }

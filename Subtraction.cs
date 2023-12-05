@@ -32,7 +32,7 @@ namespace FinalProject
 
         public override double Calculate(double num1, double num2)
         {
-            throw new NotImplementedException();
+            return num1 - num2;
         }
     }
 }
