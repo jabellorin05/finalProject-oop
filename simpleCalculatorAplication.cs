@@ -12,11 +12,11 @@ namespace FinalProject
 {
     public partial class simpleCalculatorAplication : Form
     {
-        double result=0;
-        string currentValue = "0";
+        double result=0,currentValue=0;
+        string currentNumber = "0";
         string currentOperation = "";
         Addition addition = new Addition();
-        Addition subtraction = new Addition();
+        Subtraction subtraction = new Subtraction();
 
         List<double> ValuesList = new List<double>();
         
@@ -28,7 +28,7 @@ namespace FinalProject
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text += "1";
-            currentValue += "1";
+            currentNumber += "1";
 
         }
 
@@ -36,7 +36,7 @@ namespace FinalProject
         {
             
             textBox1.Text += "+";
-            double val1 = Convert.ToDouble( currentValue);
+            double val1 = Convert.ToDouble( currentNumber);
             
             addition.ListValues(val1);
             ValuesList=addition.GetList();
@@ -45,7 +45,7 @@ namespace FinalProject
           
 
             
-            currentValue = "0";
+            currentNumber = "0";
             currentOperation = "+";
            
         }
@@ -58,64 +58,64 @@ namespace FinalProject
             if (currentOperation.Equals("+"))
             {
                 Operations operations = new Addition();
-                addition.ListValues(Double.Parse(currentValue));
+                addition.ListValues(Double.Parse(currentNumber));
                 ValuesList = addition.GetList();
-                currentValue = "0";
+                currentNumber = "0";
                 // double LastValue = Convert.ToDouble(currentValue);
                
 
                
                 result = operations.Calculate(ValuesList);
-                textBox2.Text = result.ToString();  
+                textBox2.Text = result.ToString();
+                currentValue = result;
             }
             else if (currentOperation.Equals("-"))
             {
                 Operations operations = new Subtraction();
-                subtraction.ListValues(Double.Parse(currentValue));
-                ValuesList =subtraction.GetList();
-                currentValue = "0";
+                subtraction.ListValues(Double.Parse(currentNumber));
                
+                ValuesList =subtraction.GetList();
+                currentNumber = "0";
+
                 result = operations.Calculate(ValuesList);
                 textBox2.Text = result.ToString();
-
+                currentValue = result;
+                
             }
           
 
 
-            textBox1.Text += result.ToString();
-            textBox2.Text = result.ToString();
+            //textBox1.Text += result.ToString();
+          //  textBox2.Text = result.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             textBox1.Text += "2";
-            currentValue += "2";
+            currentNumber += "2";
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             textBox1.Text += "3";
-            currentValue += 3;
+            currentNumber += 3;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             textBox1.Text += "4";
-            currentValue += 4;
+            currentNumber += 4;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
+            Operations op = new Subtraction();
             textBox1.Text += "-";
-            double val1 = Convert.ToDouble(currentValue);
+            double val1 = Convert.ToDouble(currentNumber);
            
-          
-            addition.ListValues(val1);
-            ValuesList = addition.GetList();
-
-
-            currentValue = "0";
+            subtraction.ListValues(val1);
+            currentNumber = "0";
             currentOperation = "-";
         }
     }
