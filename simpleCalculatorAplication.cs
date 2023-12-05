@@ -11,6 +11,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProject
 {
+    //Jose Bellorin
+    //Description: simple Calculator
+    //2023/12/05
+
     public partial class simpleCalculatorAplication : Form
     {
         double result=0,currentValue=0,valueBefore=0;
@@ -414,7 +418,12 @@ namespace FinalProject
 
     }
 
-    private void button13_Click(object sender, EventArgs e)
+        private void simpleCalculatorAplication_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
         {
 
             Operations operations = new Subtraction();

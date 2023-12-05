@@ -15,6 +15,11 @@ namespace FinalProject
 {
     public partial class The_IP4___IP6_Validator : Form
     {
+
+        //Jose Bellorin
+        //Description: simple Calculator
+        //2023/12/05
+
         static string dir = @".\Files\";
         static string path = dir + "ipB.txt";
         FileStream fs = null;

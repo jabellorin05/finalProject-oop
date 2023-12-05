@@ -313,6 +313,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "simpleCalculatorAplication";
             this.Text = "simpleCalculatorAplication";
+            this.Load += new System.EventHandler(this.simpleCalculatorAplication_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

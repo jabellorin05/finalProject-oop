@@ -8,8 +8,11 @@ namespace FinalProject
 {
     public partial class The_Temperature_application : Form
     {
-        
-        
+        //Jose Bellorin
+        //Description: Temperature
+        //2023/12/05 
+
+
         //variables
 
         DateTime iniTime;
