@@ -55,13 +55,14 @@ namespace FinalProject
                 textBox2.Text = "";
                 valueBefore = currentValue;
             }
-            if (count>1)
+            if (count==2)
             {
                 textBox1.Text += "=";
                 currentValue = Convert.ToDouble(textBox2.Text);
                 result = operations.Calculate(valueBefore,currentValue);
                 textBox2.Text = result.ToString();
                 textBox1.Text += result;
+                count = 0;
             }
 
          
@@ -89,14 +90,15 @@ namespace FinalProject
                 Operations operations = new Addition();
                 //currentValue = Convert.ToDouble(textBox2.Text);
 
-                if (count >= 1)
+                if (count >=1 )
                 {
-                    textBox1.Text += "=";
-                    result = operations.Calculate(valueBefore, currentValue);
-                    textBox2.Text = result.ToString();
-                    textBox1.Text += result.ToString();
-                  // currentValue = Convert.ToDouble(textBox2.Text);
-                   // count = 0;
+                   
+                        textBox1.Text += "=";
+                        currentValue = Convert.ToDouble(textBox2.Text);
+                        result = operations.Calculate(valueBefore, currentValue);
+                        textBox2.Text = result.ToString();
+                        textBox1.Text += result;
+                        count = 0;
                 }
 
 
